@@ -1,0 +1,1 @@
+JDK usata: https://github.com/adoptium/temurin17-binaries/releases/tag/jdk-17.0.14%2B7
