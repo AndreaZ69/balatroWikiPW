@@ -14,26 +14,26 @@ import java.util.List;
 
 @Controller
 public class JokerResolver {
-	
+
 	@Autowired
 	private JokerRepository jokerRepository;
-	
+
 	@QueryMapping
 	public List<Joker> jokers() {
 		return jokerRepository.findAll();
 	}
-	
+
 	@QueryMapping
 	public List<Joker> jokersByRarity(@Argument String rarity) {
 		return jokerRepository.findAllByRarity(rarity);
 	}
-	
+
 	@QueryMapping
 	public List<Joker> jokersByType(@Argument TypeEnum type) {
 		System.out.println(type.getValue());
 		return jokerRepository.findAllByType(type.getValue());
 	}
-	
+
 	@QueryMapping
 	public List<Joker> jokersByActivation(@Argument ActivationEnum activation) {
 		return jokerRepository.findAllByActivation(activation.getValue());

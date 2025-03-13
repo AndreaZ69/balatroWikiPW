@@ -11,15 +11,15 @@ import lombok.Data;
 public class Joker {
 	@Id
 	private int id;
-	
+
 	private String name;
 	private String rarity;
-	
+
 	private String description;
 	private String unlockMethod;
-	
+
 	private int price;
 	private String type;
-	
+
 	private String activation;
 }
