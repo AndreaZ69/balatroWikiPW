@@ -1,8 +1,8 @@
 package com.balatroWiki.resolver;
 
 import com.balatroWiki.entity.Joker;
-import com.balatroWiki.enums.TypeEnum;
-import com.balatroWiki.enums.ActivationEnum;
+import com.balatroWiki.enums.JokerTypeEnum;
+import com.balatroWiki.enums.JokerActivationEnum;
 import com.balatroWiki.repository.JokerRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +29,13 @@ public class JokerResolver {
 	}
 
 	@QueryMapping
-	public List<Joker> jokersByType(@Argument TypeEnum type) {
+	public List<Joker> jokersByType(@Argument JokerTypeEnum type) {
 		System.out.println(type.getValue());
 		return jokerRepository.findAllByType(type.getValue());
 	}
 
 	@QueryMapping
-	public List<Joker> jokersByActivation(@Argument ActivationEnum activation) {
+	public List<Joker> jokersByActivation(@Argument JokerActivationEnum activation) {
 		return jokerRepository.findAllByActivation(activation.getValue());
 	}
 }
