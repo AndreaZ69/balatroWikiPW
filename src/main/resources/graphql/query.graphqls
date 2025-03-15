@@ -1,6 +1,9 @@
 type Query {
-	jokers: [Joker!]!
-	jokersByRarity(rarity: Rarity!): [Joker!]!
-	jokersByType(type: Type!): [Joker!]!
-	jokersByActivation(activation: Activation!): [Joker!]!
+	jokers(
+		id: Int, 
+		name: String, 
+		rarity: Rarity, 
+		type: JokerType, 
+		activation: JokerActivation
+	): [Joker!]!
 }

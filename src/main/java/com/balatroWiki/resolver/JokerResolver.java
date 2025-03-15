@@ -3,7 +3,7 @@ package com.balatroWiki.resolver;
 import com.balatroWiki.entity.Joker;
 import com.balatroWiki.enums.JokerTypeEnum;
 import com.balatroWiki.enums.JokerActivationEnum;
-import com.balatroWiki.repository.JokerRepository;
+import com.balatroWiki.service.JokerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -14,28 +14,23 @@ import java.util.List;
 
 @Controller
 public class JokerResolver {
-
 	@Autowired
-	private JokerRepository jokerRepository;
+	private JokerService jokerService;
 
 	@QueryMapping
-	public List<Joker> jokers() {
-		return jokerRepository.findAll();
-	}
-
-	@QueryMapping
-	public List<Joker> jokersByRarity(@Argument String rarity) {
-		return jokerRepository.findAllByRarity(rarity);
-	}
-
-	@QueryMapping
-	public List<Joker> jokersByType(@Argument JokerTypeEnum type) {
-		System.out.println(type.getValue());
-		return jokerRepository.findAllByType(type.getValue());
-	}
-
-	@QueryMapping
-	public List<Joker> jokersByActivation(@Argument JokerActivationEnum activation) {
-		return jokerRepository.findAllByActivation(activation.getValue());
+	public List<Joker> jokers(@Argument Integer id, @Argument String name, @Argument String rarity, @Argument JokerTypeEnum type, @Argument JokerActivationEnum activation) {
+		String checkedType = (type != null) ? type.getValue() : null;
+		String checkedActivation = (activation != null) ? activation.getValue() : null;
+		
+		Joker filter = new Joker(
+				id, 
+				name, 
+				rarity, 
+				null, 
+				null, 
+				null, 
+				checkedType, 
+				checkedActivation);
+		return jokerService.findAll(filter);
 	}
 }

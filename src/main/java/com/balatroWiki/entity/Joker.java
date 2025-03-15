@@ -3,23 +3,29 @@ package com.balatroWiki.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "jokers")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Joker {
 	@Id
-	private int id;
+	private Integer id;
 
 	private String name;
 	private String rarity;
-
 	private String description;
 	private String unlockMethod;
 
-	private int price;
+	private Integer price;
+	
 	private String type;
-
 	private String activation;
 }

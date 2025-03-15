@@ -1,0 +1,10 @@
+type Joker {
+	id: ID!
+	name: String!
+	rarity: String!
+	description: String!
+	unlockMethod: String!
+	price: Int!
+	type: String!
+	activation: String!
+}
