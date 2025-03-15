@@ -30,7 +30,10 @@ public class JokerResolver {
 				null, 
 				null, 
 				checkedType, 
-				checkedActivation);
+				checkedActivation,
+				null
+		);
+		
 		return jokerService.findAll(filter);
 	}
 }

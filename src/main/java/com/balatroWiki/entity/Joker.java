@@ -28,4 +28,5 @@ public class Joker {
 	
 	private String type;
 	private String activation;
+	private String imageLink;
 }
