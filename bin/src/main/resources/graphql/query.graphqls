@@ -1,0 +1,9 @@
+type Query {
+	jokers(
+		id: Int, 
+		name: String, 
+		rarity: Rarity, 
+		type: JokerType, 
+		activation: JokerActivation
+	): [Joker!]!
+}

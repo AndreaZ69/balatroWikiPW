@@ -7,5 +7,4 @@ type Joker {
 	price: Int!
 	type: String!
 	activation: String!
-	imageLink: String!
 }
