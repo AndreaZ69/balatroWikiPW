@@ -11,6 +11,8 @@ public class SecurityConfig implements WebMvcConfigurer{
 	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**").allowedOriginPatterns("to add later").allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");;
+		registry.addMapping("/**")
+		.allowedOriginPatterns("http://localhost:5173", "frontend heroku link TBA")
+		.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
 	}
 }

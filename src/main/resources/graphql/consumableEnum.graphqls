@@ -1,0 +1,5 @@
+enum ConsumableType {
+	TAROT
+	PLANET
+	SPECTRAL
+}

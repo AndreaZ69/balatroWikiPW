@@ -6,4 +6,9 @@ type Query {
 		type: JokerType, 
 		activation: JokerActivation
 	): [Joker!]!
+	consumables(
+		id: Int,
+		name: String,
+		type: ConsumableType,
+	): [Consumable!]!
 }

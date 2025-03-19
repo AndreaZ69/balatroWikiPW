@@ -1,0 +1,7 @@
+type Consumable {
+	id: ID!
+	name: String!
+	type: ConsumableType!
+	description: String!
+	imageLink: String!
+}
