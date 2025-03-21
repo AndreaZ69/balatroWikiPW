@@ -1,5 +1,7 @@
 package com.balatroWiki.enums;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum JokerActivationEnum {
 	PASSIVE("Passive"), 
 	INDEPENDENT("Independent"), 
@@ -15,7 +17,8 @@ public enum JokerActivationEnum {
 	private JokerActivationEnum(String value) {
 		this.value = value;
 	}
-
+	
+	@JsonValue
 	public String getValue() {
 		return this.value;
 	}

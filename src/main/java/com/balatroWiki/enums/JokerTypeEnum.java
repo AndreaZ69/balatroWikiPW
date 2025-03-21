@@ -1,5 +1,7 @@
 package com.balatroWiki.enums;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum JokerTypeEnum {
 	CHIPS("Chips"), 
 	ADDITIVE_MULT("Additive Mult"), 
@@ -14,7 +16,8 @@ public enum JokerTypeEnum {
 	private JokerTypeEnum(String value) {
 		this.value = value;
 	}
-
+	
+	@JsonValue
 	public String getValue() {
 		return this.value;
 	}
