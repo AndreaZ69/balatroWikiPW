@@ -19,8 +19,8 @@ public class ConsumableService {
 	
 	public List<Consumable> findAll(Consumable temp){
 		ExampleMatcher exampleMatcher = ExampleMatcher
-				.matchingAny()
-				.withMatcher("name", ExampleMatcher.GenericPropertyMatchers.startsWith().ignoreCase());
+				.matching()
+				.withMatcher("name", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase());
 		
 		Example<Consumable> example = Example.of(temp, exampleMatcher);
 		

@@ -19,8 +19,8 @@ public class JokerService {
 	
 	public List<Joker> findAll(Joker temp){
 		ExampleMatcher exampleMatcher = ExampleMatcher
-				.matchingAny()
-				.withMatcher("name", ExampleMatcher.GenericPropertyMatchers.startsWith().ignoreCase());
+				.matching()
+				.withMatcher("name", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase());
 		
 		Example<Joker> example = Example.of(temp, exampleMatcher);
 		
